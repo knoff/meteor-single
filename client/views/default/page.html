@@ -1,0 +1,10 @@
+<template name="default-page">
+	<h3>{{title}}</h3>
+	<ul class="childs">
+	{{#each childs}}
+		<li>
+			<a href="{{fullUrl}}">{{title}}</a>
+		</li>
+	{{/each}}
+	</ul>
+</template>

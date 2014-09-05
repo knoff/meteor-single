@@ -1,0 +1,10 @@
+<template name="page">
+<ul class="breadcrumb">
+	{{#each breadcrumbs}}
+		{{>template name="breadcrumbs" context=this}}
+	{{/each}}
+</ul>
+<div>
+	{{>template name="page" context=currentPage}}
+</div>
+</template>
