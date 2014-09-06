@@ -1,10 +1,4 @@
 Template.template.helpers({
-	contexted:function(){
-		this.context = this.context || {};
-		this.context.helpers = this.context.helpers||{};
-		this.context.helpers.TemplateContext = this.name;
-		return [this.context];
-	},
 	template: function(){
 		var template = this.template?this.template:"default";
 		var ctemplate = this.helpers&&this.helpers.TemplateContext ? this.helpers.TemplateContext : "default";
@@ -15,6 +9,7 @@ Template.template.helpers({
 		for(var i = templates.length-1; i>=0; i--){
 			if(Template[templates[i]]) return Template[templates[i]];
 		}
+		console.error("Templates not found! "+templates.join());
 		return null
 	}
 });
