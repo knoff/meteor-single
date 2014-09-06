@@ -6,8 +6,11 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom('METEOR@0.9.1');
+  api.use(['templating'], 'client');
   api.use('iron:router@0.9.1');
   api.addFiles('lib/router.js');
+  api.addFiles('client/templates/template.html','client');
+  api.addFiles('client/templates/template.js','client');
 });
 
 Package.onTest(function(api) {
