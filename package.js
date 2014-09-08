@@ -19,8 +19,10 @@ Package.onUse(function(api) {
   api.addFiles('client/templates/single-page.html','client');
   api.addFiles('client/templates/single-404.html','client');
   api.addFiles('client/template-helpers.js','client');
+  api.addFiles('client/UI.js','client');
   api.export('SingleItems',['client','server']);
   api.export('getDescendantProp',['client','server']);
+  api.export('Single',['client']);
 });
 
 Package.onTest(function(api) {
