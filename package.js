@@ -1,12 +1,12 @@
 Package.describe({
   summary: "CMF specifically designed for Meteor",
-  version: "0.0.1",
+  version: "0.1.0",
   git: "https://github.com/knoff/meteor-single"
 });
 
 Package.onUse(function(api) {
   api.versionsFrom('METEOR@0.9.1');
-  api.use(['templating'], 'client');
+  api.use('templating@1.0.5', ['client']);
   api.use('iron:router@0.9.1');
   api.use('matb33:collection-hooks@0.7.3');
   api.use('jquery',['client']);
