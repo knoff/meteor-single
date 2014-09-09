@@ -1,6 +1,6 @@
 Package.describe({
   summary: "CMF specifically designed for Meteor",
-  version: "0.1.1.1",
+  version: "0.1.1-dev",
   git: "https://github.com/knoff/meteor-single"
 });
 
