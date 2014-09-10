@@ -12,6 +12,31 @@ Single.UI.addSchema=function(name,schema){
 Meteor.startup(function(){
 	Template['single-page'].events={
 		'click [single-edit]': function(event){
+			var editor = $(event.currentTarget);
+			console.log((editor.attr('contenteditable')==="true"));
+			if(!(editor.attr('contenteditable')==="true")){
+				editor.attr('contenteditable',true);
+				editor.blur(function(event){
+					console.log(editor.html());
+					editor.attr('contenteditable',false);
+					var found=Single.Utils.getDescendantSingleItem(
+		  			Blaze.getData(event.currentTarget),
+		  			$(event.currentTarget).attr('single-edit')
+		  		);
+		  		var val = editor.html();
+					if(!_.isUndefined(found.found)){
+		  		Single.Utils.setDescendantProp(
+		  			Blaze.getData(event.currentTarget),
+		  			$(event.currentTarget).attr('single-edit'),
+		  			val
+		  		);
+		  		var newVal={};
+		  		newVal[found.name]=val;
+		  		SingleItems.update({_id:found.found._id},{$set:newVal});
+		  	}
+				})
+			}
+			/*
 			var element = $(event.currentTarget);
 			switch(element.attr("single-type")){
 				case "textarea" :
@@ -66,6 +91,7 @@ Meteor.startup(function(){
 			//var object = Blaze.getData(event.currentTarget);
 			//Single.Utils.setDescendantProp(object,$(event.currentTarget).attr('single-edit'),"test")
 			//console.log(Single.Utils.getDescendantProp(Blaze.getData(event.currentTarget),$(event.currentTarget).attr('single-edit')));
+			*/
 		}
 	}
 });
