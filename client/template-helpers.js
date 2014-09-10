@@ -15,8 +15,13 @@ Meteor.startup(function(){
 			return [this.context];
 		}
 	})
-	Template.registerHelper('safe',function(field){
-		if(!_.isString(getDescendantProp(this.))){}
-			
+	Template.registerHelper('safe',function(data){
+		//console.log(field);
+		//if(!_.isString(field)) return '';
+		//var val=_.isString(Single.Utils.getDescendantProp(this,field))
+		if(!data){
+			return '';
+		}
+		return new Spacebars.SafeString(data);
 	})
 });
