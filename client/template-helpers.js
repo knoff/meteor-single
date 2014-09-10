@@ -15,4 +15,8 @@ Meteor.startup(function(){
 			return [this.context];
 		}
 	})
+	Template.registerHelper('safe',function(field){
+		if(!_.isString(getDescendantProp(this.))){}
+			
+	})
 });

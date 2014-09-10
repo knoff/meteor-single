@@ -25,15 +25,15 @@ Meteor.startup(function(){
 		  		);
 		  		var val = editor.html();
 					if(!_.isUndefined(found.found)){
-		  		Single.Utils.setDescendantProp(
-		  			Blaze.getData(event.currentTarget),
-		  			$(event.currentTarget).attr('single-edit'),
-		  			val
-		  		);
-		  		var newVal={};
-		  		newVal[found.name]=val;
-		  		SingleItems.update({_id:found.found._id},{$set:newVal});
-		  	}
+			  		Single.Utils.setDescendantProp(
+			  			Blaze.getData(event.currentTarget),
+			  			$(event.currentTarget).attr('single-edit'),
+			  			val
+			  		);
+			  		var newVal={};
+			  		newVal[found.name]=val;
+			  		SingleItems.update({_id:found.found._id},{$set:newVal});
+		  		}
 				})
 			}
 			/*
