@@ -23,5 +23,18 @@ Meteor.startup(function(){
 			return '';
 		}
 		return new Spacebars.SafeString(data);
-	})
+	});
+	Template.registerHelper('fields',function(object){
+		console.log(object);
+		if(_.isObject(object)){
+			var keys = _.keys(object);
+			keys = _.map(keys,function(val){
+				if(val!="_id"){
+					return {name:val,value:object[val]};
+				}
+			})
+		}
+
+		return keys;
+	});
 });
