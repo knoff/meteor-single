@@ -35,7 +35,7 @@ Meteor.startup(function(){
 			  		);
 			  		var newVal={};
 			  		newVal[found.name]=val;
-			  		SingleItems.update({_id:found.found._id},{$set:newVal});
+			  		SingleItems.documents.update({_id:found.found._id},{$set:newVal});
 			  		editor.remove();
 			  		view.css({display:display});
 		  		}
