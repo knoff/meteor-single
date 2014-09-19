@@ -19,7 +19,8 @@ Package.onUse(function(api) {
   api.addFiles('lib/triggers.coffee',['client','server']);
   //api.addFiles('collections/single-items.js',['client','server']);
   api.addFiles('collections/single-items.coffee',['client','server']);
-  api.addFiles('lib/router.js',['client','server']);
+  //api.addFiles('lib/router.js',['client','server']);
+  api.addFiles('lib/router.coffee',['client','server']);
   api.addFiles('client/templates/template.html','client');
   api.addFiles('client/templates/template.js','client');
   api.addFiles('client/templates/single-page.html','client');
